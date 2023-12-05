@@ -33,31 +33,16 @@ examples = [
     "nineight",                                # 98  -> someone told me this tip let's see
 ]
 
-def find_first_digit(value: str):
+def find_digit(value: str, operation):
     for d in DIGITS:
-        if value.startswith(d):
+        if operation(value, d):
             if len(d) > 2:
                 return SPELLED_NUMS[d]
             return d
 
     for r in range(1, len(value)):
         for d in DIGITS:
-            if value[r:len(value)].startswith(d):
-                if len(d) > 2:
-                    return SPELLED_NUMS[d]  
-                return d
-
-
-def find_last_digit(value: str):
-    for d in DIGITS:
-        if value.endswith(d):
-            if len(d) > 2:
-                return SPELLED_NUMS[d]
-            return d
-
-    for r in range(1, len(value)):
-        for d in DIGITS:
-            if value[:r*-1].endswith(d):
+            if operation(value[r:], d) or operation(value[:-r], d):
                 if len(d) > 2:
                     return SPELLED_NUMS[d]
                 return d
@@ -68,8 +53,8 @@ first_num = last_num = ""
 examples = read_calibration_doc("day_1/calibration_document.txt")
 numbers = list()
 for example in examples:
-    first_num = find_first_digit(example)
-    last_num = find_last_digit(example)
+    first_num = find_digit(example, str.startswith)
+    last_num = find_digit(example, str.endswith)
 
     numbers.append(int(f"{first_num}{last_num}"))
 
