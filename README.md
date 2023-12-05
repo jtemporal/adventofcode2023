@@ -6,9 +6,9 @@
 
 - [x] [Day 1: Trebuchet!](/day_1/)
 - [x] [Day 2: Cube Conundrum](/day_2/)
-- [ ] Day 3
-- [ ] Day 4
-- [ ] Day 5
+- [ ] [Day 3: Gear Ratios](/day_3/)
+- [ ] [Day 4: Scratchcards](/day_4/)
+- [ ] [Day 5: If You Give A Seed A Fertilizer](/day_5/)
 - [ ] Day 6
 - [ ] Day 7
 - [ ] Day 8
