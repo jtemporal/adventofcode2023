@@ -34,7 +34,6 @@ for game_id, g in enumerate(games):
         transformed.append(transform_set(s))
     
     if all(transformed):
-        print(f"Game ID: {game_id+1}, Possible")
         possible_ids.append(game_id+1)
 
-print(sum(possible_ids))
+print(f"Part 1: {sum(possible_ids)}")
