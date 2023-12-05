@@ -18,23 +18,17 @@ DIGITS = [
     "1", "2", "3", "4", "5", "6", "7", "8", "9"
     ]
 
-def read_calibration_doc(doc_path:str):
-    with open(doc_path) as f:
-        values = f.readlines()
-    values = [value.strip('\n') for value in values]
-    return values
+# examples = [
+#     "two1nine",                                # 29
+#     "eightwothree",                            # 83
+#     "abcone2threexyz",                         # 13
+#     "xtwone3four",                             # 24
+#     "4nineeightseven2",                        # 42
+#     "zoneight234",                             # 14
+#     "7pqrstsixteen",                           # 76  -> sum = 281
+#     "nineight",                                # 98  -> someone told me this tip let's see
+# ]
 
-
-examples = [
-    "two1nine",                                # 29
-    "eightwothree",                            # 83
-    "abcone2threexyz",                         # 13
-    "xtwone3four",                             # 24
-    "4nineeightseven2",                        # 42
-    "zoneight234",                             # 14
-    "7pqrstsixteen",                           # 76  -> sum = 281
-    "nineight",                                # 98  -> someone told me this tip let's see
-]
 
 def find_digit(value: str, operation):
     for d in DIGITS:
@@ -61,5 +55,4 @@ for example in examples:
 
     numbers.append(int(f"{first_num}{last_num}"))
 
-print(numbers)
 print(f"Part 2: {sum(numbers)}")
