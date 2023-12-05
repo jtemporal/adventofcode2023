@@ -1,3 +1,6 @@
+from aoc.helper import read_input
+
+
 SPELLED_NUMS = {
     "one": "1",
     "two": "2",
@@ -50,7 +53,7 @@ def find_digit(value: str, operation):
 
 first_num = last_num = ""
 
-examples = read_calibration_doc("day_1/calibration_document.txt")
+examples = read_input("day_1/calibration_document.txt")
 numbers = list()
 for example in examples:
     first_num = find_digit(example, str.startswith)
